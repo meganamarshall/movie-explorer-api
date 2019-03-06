@@ -1,4 +1,4 @@
 import loadAlbums from './list-component.js';
-import albums from '../data/albums.js';
+import data from '../data/data.js';
 
-loadAlbums(albums);
+loadAlbums(data.items);

@@ -1,9 +1,13 @@
-export function makeAlbumList(album) {
+import data from '../data/data.js';
+
+// const dataItems = data.item;
+
+export function makeAlbumList(dataItems) {
     const html = /*html*/
     `<li>
-        <h2>${album.items[0].name}</h2>
-        <img src="${album.items[0].images[0].url}">
-        <p>Release Year: ${album.items[0].release_date.slice(0, 4)}</p>
+        <h2>${dataItems.name}</h2>
+        <img src="${dataItems.images[0].url}">
+        <p>Release Year: ${dataItems.release_date.slice(0, 4)}</p>
     </li>`;
 
     const template = document.createElement('template');
@@ -13,10 +17,12 @@ export function makeAlbumList(album) {
 
 const albumList = document.getElementById('album-list');
 
-export default function loadAlbums(albums) {
+export default function loadAlbums(dataItems) {
     while(albumList.firstChild) {
         albumList.firstChild.remove();
     }
-    const dom = makeAlbumList(album);
-    albumList.appendChild(dom);
+    dataItems.forEach(item => {
+        const dom = makeAlbumList(item);
+        albumList.appendChild(dom);
+    });
 }
