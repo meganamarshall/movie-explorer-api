@@ -1,0 +1,25 @@
+ul {
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    height: 300px;
+    width: 250px;
+    margin: 8px;
+}
+
+img {
+    width: 70%;
+}
+
+h2 {
+    font-size: 15px;
+}
