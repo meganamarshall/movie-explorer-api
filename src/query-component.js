@@ -12,7 +12,7 @@ export function writePageToQuery(existingQuery, page) {
     return searchParams.toString();
 }
 
-export default function readFromQuery(query) {
+export function readFromQuery(query) {
     const searchParams = new URLSearchParams(query);
     const pageString = searchParams.get('page');
 
