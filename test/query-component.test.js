@@ -26,3 +26,30 @@ test('write search to existing query and update search/reset page to 1', assert 
     //assert
     assert.equal(query, expected);
 });
+
+function writePageToQuery(existingQuery, page) {
+    const searchParams = new URLSearchParams(existingQuery);
+    searchParams.set('page', page);
+    return searchParams.toString();
+}
+test('write page to existing query', assert => {
+    //arrange
+    const existingQuery = 'searchInput=elvis&page=4';
+    const page = 5;
+    //act
+    const query = writePageToQuery(existingQuery, page);
+    const expected = 'searchInput=elvis&page=5';
+    //assert
+    assert.equal(query, expected);
+});
+
+// test('read options from query', assert => {
+//     //arrange
+//     const query = 'searchInput=beatles&page=1';
+//     const expected = {
+//         searchInput: 'beatles',
+//         page: 1
+//     };
+//     //act
+//     const result = 
+// });
