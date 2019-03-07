@@ -1,13 +1,17 @@
-import data from '../data/data.js';
-
-// const dataItems = data.item;
-
-export function makeAlbumList(dataItems) {
+export function makeMoviesList(movies) {
+    let posterPath = null;
+    if(movie.poster_path) {
+        posterPath = `https://image.tmdb.org/t/p/w92${movie.poster_path}`;
+    }
+    else {
+        posterPath = '../assets/movie-placeholder.png';
+    }
+    
     const html = /*html*/
     `<li>
-        <h2>${dataItems.name}</h2>
-        <img src="${dataItems.images[0].url}">
-        <p>Release Year: ${dataItems.release_date.slice(0, 4)}</p>
+        <h2>${movie.title}</h2>
+        <img src="${posterPath}">
+        <p>Release Year: ${movie.release_date.slice(0, 4)}</p>
     </li>`;
 
     const template = document.createElement('template');
@@ -15,14 +19,14 @@ export function makeAlbumList(dataItems) {
     return template.content;
 }
 
-const albumList = document.getElementById('album-list');
+const moviesList = document.getElementById('movies-list');
 
-export default function loadAlbums(dataItems) {
-    while(albumList.firstChild) {
-        albumList.firstChild.remove();
+export default function loadMovies(movies) {
+    while(moviesList.firstChild) {
+        moviesList.firstChild.remove();
     }
-    dataItems.forEach(item => {
-        const dom = makeAlbumList(item);
-        albumList.appendChild(dom);
+    movies.forEach(movie => {
+        const dom = makeMoviesList(movie);
+        moviesList.appendChild(dom);
     });
 }
