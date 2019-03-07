@@ -1,11 +1,11 @@
 import { writeSearchToQuery } from './query-component.js';
 
-const artistSearchForm = document.getElementById('artist-search');
+const movieSearchForm = document.getElementById('search-form');
 
-artistSearchForm.addEventListener('submit', event => {
+movieSearchForm.addEventListener('submit', event => {
     event.preventDefault();
-    const formData = new FormData(artistSearchForm);
-    const searchInput = formData.get('artist');
+    const formData = new FormData(movieSearchForm);
+    const searchInput = formData.get('movie');
     const existingQuery = window.location.hash.slice(1);
 
     const newQuery = writeSearchToQuery(existingQuery, searchInput);

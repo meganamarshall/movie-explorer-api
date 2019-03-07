@@ -1,4 +1,4 @@
-export function makeMoviesList(movies) {
+export function makeMoviesList(movie) {
     let posterPath = null;
     if(movie.poster_path) {
         posterPath = `https://image.tmdb.org/t/p/w92${movie.poster_path}`;

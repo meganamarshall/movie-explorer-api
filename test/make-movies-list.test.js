@@ -17,7 +17,7 @@ test('generate movie list item', assert => {
             <p>Release Year: 2018</p>
         </li>`;
     //act
-    const result = makeMoviesList(movies);
+    const result = makeMoviesList(movie);
     //assert
     assert.htmlEqual(result, expected);
 });
