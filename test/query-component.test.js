@@ -1,6 +1,6 @@
 import { writeSearchToQuery } from '../src/query-component.js';
 import { writePageToQuery } from '../src/query-component.js';
-import readFromQuery from '../src/query-component.js';
+import { readFromQuery } from '../src/query-component.js';
 
 const test = QUnit.test;
 QUnit.module('query tests');
