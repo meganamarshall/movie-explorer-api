@@ -1,7 +1,20 @@
-export function filterMoviesByYear(movies, filter) {
-    return movies.filter(movie => {
-        const releaseDate = movie.release_date.slice(0, 4);
-        const hasYear = !filter.release_date || releaseDate === filter.release_date;
-        return hasYear;
-    });
+import { writeYearToQuery } from './query-component.js';
+
+const filterForm = document.getElementById('filter-form');
+const yearInput = document.getElementById('year-filter');
+
+filterForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const formData = new FormData(filterForm);
+    const yearInput = formData.get('year-filter');
+    const existingQuery = window.location.hash.slice(1);
+
+    const newQuery = writeYearToQuery(existingQuery, yearInput);
+
+    window.location.hash = newQuery;
+
+});
+
+export function updateYearInput(inputtedYear) {
+    yearInput.value = inputtedYear;
 }

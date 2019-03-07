@@ -3,6 +3,7 @@ const API_KEY = 'cb74bb60617505504abd12bd45490b45';
 
 export default function makeSearchMovieUrl(queryOptions) {
     const searchInput = queryOptions.searchInput;
+    const yearInput = queryOptions.year;
     if(!searchInput) {
         return '';
     }
@@ -12,5 +13,6 @@ export default function makeSearchMovieUrl(queryOptions) {
     url.searchParams.set('include_adult', false);
     url.searchParams.set('query', searchInput);
     url.searchParams.set('page', queryOptions.page);
+    url.searchParams.set('year', yearInput);
     return url.toString();
 }

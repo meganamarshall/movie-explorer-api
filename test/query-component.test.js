@@ -1,6 +1,7 @@
 import { writeSearchToQuery } from '../src/query-component.js';
 import { writePageToQuery } from '../src/query-component.js';
 import { readFromQuery } from '../src/query-component.js';
+import { writeYearToQuery } from '../src/query-component.js';
 
 const test = QUnit.test;
 QUnit.module('query tests');
@@ -40,12 +41,24 @@ test('write page to existing query', assert => {
     assert.equal(query, expected);
 });
 
+test('write year to existing query', assert => {
+    //arrange
+    const existingQuery = 'searchInput=batman&page=4&year=null';
+    const year = '1991';
+    //act
+    const query = writeYearToQuery(existingQuery, year);
+    const expected = 'searchInput=batman&page=4&year=1991';
+    //assert
+    assert.equal(query, expected);
+});
+
 test('read options from query', assert => {
     //arrange
-    const query = 'searchInput=batman&page=1';
+    const query = 'searchInput=batman&page=1&year=1990';
     const expected = {
         searchInput: 'batman',
-        page: 1
+        page: 1,
+        year: 1990
     };
     //act
     const options = readFromQuery(query);

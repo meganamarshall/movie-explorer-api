@@ -1,8 +1,11 @@
 import loadMovies from './list-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchInput } from '../src/search-component.js';
+import { updateYearInput } from './filter-component.js';
 import makeSearchMovieUrl from '../src/make-search-movie-url.js';
 import { updatePagingInfo } from './paging-component.js';
+
+
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movies-section');
 
@@ -15,6 +18,7 @@ function loadQuery() {
     const queryOptions = readFromQuery(query);
     
     updateSearchInput(queryOptions.searchInput);
+    updateYearInput(queryOptions.year);
     const url = makeSearchMovieUrl(queryOptions);
 
     if(!url) {

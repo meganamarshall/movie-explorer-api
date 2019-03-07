@@ -24,8 +24,10 @@
 
         <div id="movies-section" class="hidden">
             <section id="filter-section">
-                <input type="text" name="year-filter" id="year-filter">
-                <button>Filter By Year</button>
+                <form id="filter-form">
+                    <input type="text" name="year-filter" id="year-filter">
+                    <button>Filter By Year</button>
+                </form>
             </section>
 
             <section id="paging-section">
@@ -33,7 +35,7 @@
                 Page <span id="current-page"></span> of <span id="total-pages"></span>
                 <button id="next-button">Next</button>
             </section>
-            
+
             <section>
                 <ul id="movies-list">
                     
