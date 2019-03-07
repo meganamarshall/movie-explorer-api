@@ -4,7 +4,11 @@ import { updateSearchInput } from '../src/search-component.js';
 import makeSearchMovieUrl from '../src/make-search-movie-url.js';
 import { updatePagingInfo } from './paging-component.js';
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', loadQuery);
+
+loadQuery();
+
+function loadQuery() {
     const query = window.location.hash.slice(1);
     const queryOptions = readFromQuery(query);
     
@@ -24,5 +28,6 @@ window.addEventListener('hashchange', () => {
             /* eslint-disable-next-line */
             console.error('Fetch error:', err);
         });
-});
+
+}
 
