@@ -3,6 +3,8 @@ import readFromQuery from './query-component.js';
 import { updateSearchInput } from '../src/search-component.js';
 import makeSearchMovieUrl from '../src/make-search-movie-url.js';
 import { updatePagingInfo } from './paging-component.js';
+const prompt = document.getElementById('prompt');
+const moviesSection = document.getElementById('movies-section');
 
 window.addEventListener('hashchange', loadQuery);
 
@@ -14,6 +16,17 @@ function loadQuery() {
     
     updateSearchInput(queryOptions.searchInput);
     const url = makeSearchMovieUrl(queryOptions);
+
+    if(!url) {
+        prompt.classList.remove('hidden');
+        moviesSection.classList.add('hidden');
+        return;
+    }
+    else {
+        prompt.classList.add('hidden');
+        moviesSection.classList.remove('hidden');
+    }
+
     fetch(url)
         .then(response => response.json())
         .then(movies => {
@@ -28,6 +41,4 @@ function loadQuery() {
             /* eslint-disable-next-line */
             console.error('Fetch error:', err);
         });
-
 }
-

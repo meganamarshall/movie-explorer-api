@@ -15,3 +15,18 @@ test('url includes query and page', assert => {
     //assert
     assert.equal(url, expected);
 });
+
+test('returns empty url if no search input is provided', assert => {
+    //arrange
+    const queryOptions = {
+        searchInput: '',
+        page: 1
+    };
+
+    //act
+    const url = makeSearchMovieUrl(queryOptions);
+    const expected = '';
+
+    //assert
+    assert.equal(url, expected);
+});
