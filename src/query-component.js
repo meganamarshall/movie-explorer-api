@@ -12,13 +12,13 @@ export function writePageToQuery(existingQuery, page) {
     return searchParams.toString();
 }
 
-export default function readFromQuery(query) {
+export function readFromQuery(query) {
     const searchParams = new URLSearchParams(query);
     const pageString = searchParams.get('page');
 
     let page = 1;
 
-    if(!pageString) {
+    if(pageString) {
         page = parseInt(pageString);
     }
     

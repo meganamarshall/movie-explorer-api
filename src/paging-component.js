@@ -19,6 +19,7 @@ function updateQuery() {
     const existingQuery = window.location.hash.slice(1);
     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
     window.location.hash = newQuery;
+    console.log(newQuery);
 }
 
 previousButton.addEventListener('click', () => {

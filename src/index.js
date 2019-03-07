@@ -1,5 +1,5 @@
 import loadMovies from './list-component.js';
-import readFromQuery from './query-component.js';
+import { readFromQuery } from './query-component.js';
 import { updateSearchInput } from '../src/search-component.js';
 import makeSearchMovieUrl from '../src/make-search-movie-url.js';
 import { updatePagingInfo } from './paging-component.js';
