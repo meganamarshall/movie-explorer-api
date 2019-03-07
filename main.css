@@ -1,3 +1,21 @@
+html {
+    background: url('./assets/popcorn.webp') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3.5em;
+    color: black;
+}
+
+main {
+    font-family: 'Roboto', sans-serif;
+}
+
 ul {
     list-style-type: none;
     padding: 0px;
@@ -10,6 +28,7 @@ li {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
     border: 1px solid black;
     height: 300px;
     width: 250px;
@@ -17,9 +36,38 @@ li {
 }
 
 img {
-    width: 70%;
+    height: 60%;
 }
 
 h2 {
     font-size: 15px;
+    text-align: center;
+    padding: 8px;
 }
+
+button:hover {
+    background-color: lightskyblue;
+}
+
+button {
+    height: 25px;
+    width: 60px;
+    /* border-radius: 7px; */
+    border: 1px solid black;
+}
+input {
+    height: 20px;
+    border: 1px solid black;
+}
+.hidden {
+    display: none;
+}
+
+#paging-section {
+    padding-top: 10px;
+}
+
+.placeholder-size {
+    width: 60%;
+}
+
