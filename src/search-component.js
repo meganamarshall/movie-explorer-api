@@ -1,6 +1,7 @@
 import { writeSearchToQuery } from './query-component.js';
 
 const movieSearchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('movie');
 
 movieSearchForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -14,6 +15,6 @@ movieSearchForm.addEventListener('submit', event => {
 
 });
 
-export function updateSearchInput(searchInput) {
-    searchInput.value = searchInput;
+export function updateSearchInput(searchTerm) {
+    searchInput.value = searchTerm;
 }

@@ -1,8 +1,8 @@
-import movies from '../data/movies.js';
 import loadMovies from './list-component.js';
 import readFromQuery from './query-component.js';
 import { updateSearchInput } from '../src/search-component.js';
 import makeSearchMovieUrl from '../src/make-search-movie-url.js';
+import { updatePagingInfo } from './paging-component.js';
 
 window.addEventListener('hashchange', () => {
     const query = window.location.hash.slice(1);
@@ -13,8 +13,12 @@ window.addEventListener('hashchange', () => {
     fetch(url)
         .then(response => response.json())
         .then(movies => {
-            console.log(movies);
             loadMovies(movies.results);
+            const pagingInfo = {
+                page: movies.page,
+                totalPages: movies.total_pages
+            };
+            updatePagingInfo(pagingInfo);
         })
         .catch(err => {
             /* eslint-disable-next-line */
