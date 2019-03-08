@@ -27,12 +27,23 @@ export default loadMovies(callback) {
     selectCallback = callback;
 }
 
+let selectedMovie = null;
+
 export function updateMovies(movies) {
     while(moviesList.firstChild) {
         moviesList.firstChild.remove();
     }
     movies.forEach(movie => {
         const dom = makeMoviesList(movie);
+        const li = dom.querySelector('li');
+        li.addEventListener('click', () => {
+            if(selectedItem) {
+                li.classList.remove('selected')
+            }
+            li.classList.add('selected');
+            selectedItem = li;
+            selectCallback(movie);
+        })
         moviesList.appendChild(dom);
     });
 }
