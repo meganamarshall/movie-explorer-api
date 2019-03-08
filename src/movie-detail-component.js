@@ -13,3 +13,13 @@ export function makeMovieDetail(movie) {
     template.innerHTML = html;
     return template.content;
 }
+
+const detailContainer = document.getElementById("detail-container");
+
+export default loadMovieDetail(movie) {
+    while(detailContainer.firstChild) {
+        detailContainer.firstChild.remove()
+    }
+    const dom = makeMovieDetail(movie);
+    detailContainer.appendChild(dom);
+}
