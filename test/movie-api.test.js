@@ -32,3 +32,13 @@ test('returns empty url if no search input is provided', assert => {
     //assert
     assert.equal(url, expected);
 });
+
+test('movie detail uses movie id', assert => {
+    const expected = 'https://api.themoviedb.org/3/movie/78?language=en-US&api_key=cb74bb60617505504abd12bd45490b45';
+
+    const movieId = 78;
+
+    const url = makeMovieDetailUrl(movieId);
+
+    assert.equal(result, expected);
+})
