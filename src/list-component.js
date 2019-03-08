@@ -21,7 +21,13 @@ export function makeMoviesList(movie) {
 
 const moviesList = document.getElementById('movies-list');
 
-export default function loadMovies(movies) {
+let selectCallback = null;
+
+export default loadMovies(callback) {
+    selectCallback = callback;
+}
+
+export function updateMovies(movies) {
     while(moviesList.firstChild) {
         moviesList.firstChild.remove();
     }

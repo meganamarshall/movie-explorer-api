@@ -1,14 +1,16 @@
-import loadMovies from './list-component.js';
+import { updateMovies } from './list-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchInput } from '../src/search-component.js';
 import { updateYearInput } from './filter-component.js';
 import makeSearchMovieUrl from '../src/make-search-movie-url.js';
 import { updatePagingInfo } from './paging-component.js';
-
-
+import loadMovies from './list-component.js';
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movies-section');
 
+loadMovies(movie => {
+    
+})
 window.addEventListener('hashchange', loadQuery);
 
 loadQuery();
