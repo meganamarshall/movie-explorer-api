@@ -1,4 +1,4 @@
-import { makeSearchMovieUrl } from '../src/movie-api.js';
+import { makeSearchMovieUrl, makeMovieDetailUrl } from '../src/movie-api.js';
 const test = QUnit.test;
 
 QUnit.module('making url based on search');
@@ -34,11 +34,11 @@ test('returns empty url if no search input is provided', assert => {
 });
 
 test('movie detail uses movie id', assert => {
-    const expected = 'https://api.themoviedb.org/3/movie/78?language=en-US&api_key=cb74bb60617505504abd12bd45490b45';
+    const expected = 'https://api.themoviedb.org/3/movie/78?api_key=cb74bb60617505504abd12bd45490b45&language=en-us';
 
     const movieId = 78;
 
     const url = makeMovieDetailUrl(movieId);
 
-    assert.equal(result, expected);
+    assert.equal(url, expected);
 })

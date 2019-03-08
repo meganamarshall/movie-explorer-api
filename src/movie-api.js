@@ -1,4 +1,6 @@
-const SEARCH_MOVIE_URL = 'https://api.themoviedb.org/3/search/movie';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const SEARCH_MOVIE_URL = `${BASE_URL}/search/movie`;
+const MOVIE_DETAIL_URL = `${BASE_URL}/movie`;
 const API_KEY = 'cb74bb60617505504abd12bd45490b45';
 
 export function makeSearchMovieUrl(queryOptions) {
@@ -14,5 +16,13 @@ export function makeSearchMovieUrl(queryOptions) {
     url.searchParams.set('query', searchInput);
     url.searchParams.set('page', queryOptions.page);
     url.searchParams.set('year', yearInput);
+    return url.toString();
+}
+
+export function makeMovieDetailUrl(movieId) {
+    const path = `${MOVIE_DETAIL_URL}/${movieId}`;
+    const url = new URL(path);
+    url.searchParams.set('api_key', API_KEY);
+    url.searchParams.set('language', 'en-us');
     return url.toString();
 }
