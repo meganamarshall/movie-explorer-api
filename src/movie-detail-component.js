@@ -6,7 +6,7 @@ export function makeMovieDetail(movie) {
         <img id="backdrop" src="https://image.tmdb.org/t/p/w92${movie.backdrop_path}">
         <p id="tagline">${movie.tagline}</p> 
         <p id="overview">${movie.overview}</p>
-        <a href="http://www.warnerbros.com/blade-runner">Visit the site</a>
+        <a href="${movie.homepage}">Visit the site</a>
         </article>`
     const template = document.createElement('template');
     template.innerHTML = html;
