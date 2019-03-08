@@ -52,6 +52,19 @@ test('write year to existing query', assert => {
     assert.equal(query, expected);
 });
 
+test('remove year from query when user enters new search', assert => {
+    //arrange
+    const existingQuery = 'searchInput=batman&page=4&year=1991';
+    const searchInput = 'star wars';
+    const year = null;
+    //act
+    const query = writeSearchToQuery(existingQuery, searchInput);
+    const expected = 'searchInput=batman&page=4&year=null';
+
+    //assert
+    assert.equal(query, expected);
+})
+
 test('read options from query', assert => {
     //arrange
     const query = 'searchInput=batman&page=1&year=1990';
