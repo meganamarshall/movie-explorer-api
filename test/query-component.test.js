@@ -12,19 +12,19 @@ test('write search to empty query', assert => {
     const searchInput = 'batman';
     //act
     const query = writeSearchToQuery(existingQuery, searchInput);
-    const expected = 'searchInput=batman&page=1';
+    const expected = 'searchInput=batman&page=1&year=null';
     //assert
     assert.equal(query, expected);
 });
 
 test('write search to existing query and update search/reset page to 1', assert => {
     //arrange
-    const existingQuery = 'searchInput=batman&page=4';
+    const existingQuery = 'searchInput=batman&page=4&year=null';
     const searchInput = 'star wars';
 
     //act
     const query = writeSearchToQuery(existingQuery, searchInput);
-    const expected = 'searchInput=star+wars&page=1';
+    const expected = 'searchInput=star+wars&page=1&year=null';
 
     //assert
     assert.equal(query, expected);
@@ -59,7 +59,7 @@ test('remove year from query when user enters new search', assert => {
     const year = null;
     //act
     const query = writeSearchToQuery(existingQuery, searchInput);
-    const expected = 'searchInput=batman&page=4&year=null';
+    const expected = 'searchInput=star+wars&page=1&year=null';
 
     //assert
     assert.equal(query, expected);
