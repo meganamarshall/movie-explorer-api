@@ -5,7 +5,7 @@ const API_KEY = 'cb74bb60617505504abd12bd45490b45';
 
 function setDefaultQueryParams(url) {
     url.searchParams.set('api_key', API_KEY);
-    url.searchParams.set('language', 'en-us');
+    url.searchParams.set('language', 'en-US');
 }
 
 export function makeSearchMovieUrl(queryOptions) {
