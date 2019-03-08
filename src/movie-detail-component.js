@@ -16,7 +16,7 @@ export function makeMovieDetail(movie) {
 
 const detailContainer = document.getElementById("detail-container");
 
-export default loadMovieDetail(movie) {
+export default function loadMovieDetail(movie) {
     while(detailContainer.firstChild) {
         detailContainer.firstChild.remove()
     }
