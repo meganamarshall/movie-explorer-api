@@ -1,7 +1,7 @@
 const SEARCH_MOVIE_URL = 'https://api.themoviedb.org/3/search/movie';
 const API_KEY = 'cb74bb60617505504abd12bd45490b45';
 
-export default function makeSearchMovieUrl(queryOptions) {
+export function makeSearchMovieUrl(queryOptions) {
     const searchInput = queryOptions.searchInput;
     const yearInput = queryOptions.year;
     if(!searchInput) {

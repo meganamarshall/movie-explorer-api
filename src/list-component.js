@@ -23,7 +23,7 @@ const moviesList = document.getElementById('movies-list');
 
 let selectCallback = null;
 
-export default loadMovies(callback) {
+export default function loadMovies(callback) {
     selectCallback = callback;
 }
 
@@ -37,11 +37,11 @@ export function updateMovies(movies) {
         const dom = makeMoviesList(movie);
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
-            if(selectedItem) {
+            if(selectedMovie) {
                 li.classList.remove('selected')
             }
             li.classList.add('selected');
-            selectedItem = li;
+            selectedMovie = li;
             selectCallback(movie);
         })
         moviesList.appendChild(dom);

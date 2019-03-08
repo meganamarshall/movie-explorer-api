@@ -2,15 +2,17 @@ import { updateMovies } from './list-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchInput } from '../src/search-component.js';
 import { updateYearInput } from './filter-component.js';
-import makeSearchMovieUrl from '../src/make-search-movie-url.js';
+import { makeSearchMovieUrl } from './movie-api.js';
 import { updatePagingInfo } from './paging-component.js';
 import loadMovies from './list-component.js';
+import loadMovieDetail from './movie-detail-component.js';
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movies-section');
 
 loadMovies(movie => {
-    
+    loadMovieDetail(movie);
 })
+
 window.addEventListener('hashchange', loadQuery);
 
 loadQuery();
@@ -36,7 +38,7 @@ function loadQuery() {
     fetch(url)
         .then(response => response.json())
         .then(movies => {
-            loadMovies(movies.results);
+            updateMovies(movies.results);
             const pagingInfo = {
                 page: movies.page,
                 totalPages: movies.total_pages
