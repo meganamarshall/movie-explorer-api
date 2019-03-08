@@ -85,3 +85,18 @@ input {
     width: 60%;
 }
 
+#detail-list-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    padding: 10px;
+}
+
+#backdrop {
+    height: 150px;
+}
+
+#detail-container {
+    padding: 3px;
+    margin-top: 8px;
+}
+
