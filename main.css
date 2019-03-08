@@ -8,7 +8,7 @@ html {
   }
 
 h1 {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Bangers', cursive;
     font-size: 3.5em;
     color: black;
 }
@@ -37,14 +37,15 @@ li {
     margin: 8px;
 }
 
-img {
-    height: 60%;
-}
-
 h2 {
-    font-size: 20px;
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
     text-align: center;
     padding: 8px;
+}
+
+img {
+    height: 60%;
 }
 
 button:hover {
