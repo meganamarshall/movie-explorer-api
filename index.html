@@ -10,24 +10,24 @@
     <title>Movies</title>
 </head>
 <body>
-    <header>
-        <h1>Movie Explorer</h1>
-    </header>
     <main>
-        <form id="search-form">
-            <input type="text" name="movie" id="movie">
-            <button>Search</button>
-        </form>
-
-        <p id="prompt">
-            Search by movie name to get started
-        </p>
-
+    <div id="header-search-div">
+        <div id="search-div">
+            <form id="search-form">
+                <input type="text" name="movie" id="movie">
+                <button>Search</button>
+            </form>
+            <p id="prompt">
+                Search by movie name or keyword to get started
+            </p>
+        </div>
+        <h1 id="main-header">Movie Explorer</h1>
+    </div>
         <div id="movies-section" class="hidden">
             <section id="filter-section">
                 <form id="filter-form">
                     <input type="text" name="year-filter" id="year-filter">
-                    <button id="filter-button">Filter By Year</button>
+                    <button id="filter-button">Filter Results By Year</button>
                 </form>
             </section>
 

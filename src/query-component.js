@@ -16,6 +16,7 @@ export function writePageToQuery(existingQuery, page) {
 export function writeYearToQuery(existingQuery, year) {
     const searchParams = new URLSearchParams(existingQuery);
     searchParams.set('year', year);
+    searchParams.set('page', 1);
     return searchParams.toString();
 }
 

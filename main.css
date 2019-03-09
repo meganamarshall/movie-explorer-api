@@ -7,10 +7,26 @@ html {
     background-color: #9bb6c1;
   }
 
+#header-search-div {
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+#search-div {
+    margin-top: 100px;
+}
+
 h1 {
     font-family: 'Bangers', cursive;
-    font-size: 3.5em;
+    font-size: 7em;
     color: black;
+    text-align: right;
+    margin-right: 30px;
+}
+
+#prompt {
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
 }
 
 main {
@@ -53,25 +69,43 @@ button:hover {
 }
 
 button {
-    height: 25px;
-    width: 80px;
-    /* border-radius: 7px; */
+    height: 40px;
     border: 1px solid black;
     background-color: #d88373;
     font-size: 15px;
+    border-radius: 3px;
+    font-family: 'Bangers', cursive;
 }
 
-#filter-button {
-    height: 25px;
-    width: 120px;
+#search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#filter-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 #filter-section {
     padding-top: 10px;
 }
+
 input {
-    height: 20px;
+    height: 35px;
     border: 1px solid black;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+#movie {
+    height: 35px;
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
 }
 
 .hidden {
@@ -99,5 +133,9 @@ input {
 #detail-container {
     padding: 3px;
     margin-top: 8px;
+}
+
+#paging-section button {
+    width: 60px;
 }
 
