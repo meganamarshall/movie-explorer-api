@@ -8,9 +8,10 @@ export function makeMoviesList(movie) {
     }
     
     const html = /*html*/
-    `<li>
+    `<li class="movie-card">
         <h2>${movie.title}</h2>
-        <img src="${posterPath}">
+        <span id="hover-text">Click for Details</span>
+        <img class="poster" src="${posterPath}">
         <p>Release Year: ${movie.release_date.slice(0, 4)}</p>
     </li>`;
 

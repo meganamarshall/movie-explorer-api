@@ -11,9 +11,10 @@ test('generate movie list item', assert => {
         release_date: '2018-05-15'
     };
     const expected = /*html*/
-        `<li>
+        `<li class="movie-card">
             <h2>Solo: A Star Wars Story</h2>
-            <img src="https://image.tmdb.org/t/p/w92/3IGbjc5ZC5yxim5W0sFING2kdcz.jpg">
+            <span id="hover-text">Click for Details</span>
+            <img class="poster" src="https://image.tmdb.org/t/p/w92/3IGbjc5ZC5yxim5W0sFING2kdcz.jpg">
             <p>Release Year: 2018</p>
         </li>`;
     //act

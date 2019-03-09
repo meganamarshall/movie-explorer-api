@@ -47,7 +47,7 @@ test('write year to existing query', assert => {
     const year = '1991';
     //act
     const query = writeYearToQuery(existingQuery, year);
-    const expected = 'searchInput=batman&page=4&year=1991';
+    const expected = 'searchInput=batman&page=1&year=1991';
     //assert
     assert.equal(query, expected);
 });

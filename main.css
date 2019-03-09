@@ -51,17 +51,31 @@ li {
     height: 325px;
     width: 250px;
     margin: 8px;
+    background-color:  #9bb6c193;
+}
+
+#hover-text {
+    display: none;
+    font-size: .75em;
+}
+
+.movie-card:hover #hover-text {
+    display: block;
 }
 
 h2 {
     font-family: 'Bangers', cursive;
     font-size: 2em;
     text-align: center;
-    padding: 8px;
+    padding: 4px;
 }
 
-img {
-    height: 60%;
+#poster {
+    max-height: 150px;
+}
+
+#backdrop {
+    height: 200px;
 }
 
 button:hover {
