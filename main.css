@@ -55,12 +55,12 @@ li {
 }
 
 #hover-text {
-    display: none;
+    visibility: hidden;
     font-size: .75em;
 }
 
 .movie-card:hover #hover-text {
-    display: block;
+    visibility: visible;
 }
 
 .selected {
