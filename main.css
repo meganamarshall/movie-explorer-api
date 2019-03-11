@@ -111,6 +111,7 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
+    margin-left: 30px;
 }
 
 #filter-section {
@@ -136,6 +137,7 @@ input {
 
 #paging-section {
     padding-top: 10px;
+    margin-left: 30px;
 }
 
 #detail-list-container {
@@ -155,5 +157,11 @@ input {
 
 #paging-section button {
     width: 60px;
+}
+
+#detail-container {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
 }
 
